@@ -1,20 +1,24 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SGECOREDOMINIO
 {
+    [Table("VEIC_VEICULO")]
     public class Veiculo
     {
         public Veiculo()
         {
-            Ocupacoes = new List<Ocupacao>();
-            Desocupacoes = new List<Desocupacao>();
-        }
-        public int Id_Veiculo { get; set; }
 
+        }
+
+        [Key]
+        public int Id_Veiculo { get; set; }
+        [Column(TypeName = "nvarchar(9)")]
         public string Placa_Veic { get; set; }
 
-        public virtual IList<Ocupacao> Ocupacoes { get; set; }
+        public ICollection<Ocupacao> Ocupacoes { get; set; }
 
-        public virtual IList<Desocupacao> Desocupacoes { get; set; }
+        public ICollection<Desocupacao> Desocupacoes { get; set; }
     }
 }

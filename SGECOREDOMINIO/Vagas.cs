@@ -1,24 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace SGECOREDOMINIO
 {
-   public class Vagas
+    [Table("VAG_VAGA")]
+    public class Vagas
     {
         public Vagas()
         {
-            Ocupacoes = new List<Ocupacao>();
-            Desocupacoes = new List<Desocupacao>();
+          
         }
+        [Key]
         public int Id_Vaga { get; set; }
 
+        [Column(TypeName ="nvarchar(3)")]
         public string Numero_Vaga { get; set; }
 
-        public virtual Setor setor { get; set; }
+        public int setId { get; set; }
 
-        public virtual IList<Ocupacao> Ocupacoes { get; set; }
+        public  Setor setor { get; set; }
 
-        public virtual IList<Desocupacao> Desocupacoes { get; set; }
+        public ICollection<Ocupacao> Ocupacoes { get; set; }
+
+        public ICollection<Desocupacao> Desocupacoes { get; set; }
     }
 }
