@@ -19,6 +19,10 @@ namespace SGECOREDAO.CONTEXTOS
 
         public DbSet<Vagas> Vagas { get; set; }
 
+        public DbSet<Cliente> Clientes { get; set; }
+
+        public DbSet<Telefones> Telefones { get; set; }
+
         public DbSet<Setor> Setores { get; set; }
 
         public DbSet<Veiculo> Veiculos { get; set; }
@@ -37,6 +41,7 @@ namespace SGECOREDAO.CONTEXTOS
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             modelBuilder.Entity<Vagas>()
             .HasOne<Setor>(s => s.Setor)
             .WithMany(g => g.Vagas)
@@ -75,6 +80,18 @@ namespace SGECOREDAO.CONTEXTOS
          .WithMany(g => g.Desocupacoes)
          .HasForeignKey(v => v.veiId)
          .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Veiculo>()
+        .HasOne<Cliente>(c => c.Cliente)
+        .WithMany(g => g.Veiculos)
+        .HasForeignKey(c => c.cliId)
+        .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Telefones>()
+      .HasOne<Cliente>(c => c.Cliente)
+      .WithMany(g => g.Telefones)
+      .HasForeignKey(c => c.cliId)
+      .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

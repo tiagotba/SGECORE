@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SGECOREDAO.CONTEXTOS;
 
 namespace SGECOREDAO.Migrations
 {
     [DbContext(typeof(SGECORECONTEXT))]
-    partial class SGECORECONTEXTModelSnapshot : ModelSnapshot
+    [Migration("20180924141410_correcaosegundaCargaBase")]
+    partial class correcaosegundaCargaBase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
