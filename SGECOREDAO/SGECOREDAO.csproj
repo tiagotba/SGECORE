@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20180923234703_primeiraCargaBase.cs" />
+    <Compile Remove="Migrations\20180924000554_primeiraCargaBase.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="DAO\" />
   </ItemGroup>
 

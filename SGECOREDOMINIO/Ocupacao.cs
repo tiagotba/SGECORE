@@ -15,16 +15,20 @@ namespace SGECOREDOMINIO
         [Key]
         public int Id_Ocup { get; set; }
 
+        [Column("DATA_ENTRADA")]
         public DateTime Data_Hora_Entrada { get; set; }
 
+        [Column("ID_SETOR_OCU")]
         public int setId { get; set; }
-        public Setor setor { get; set; }
+        public Setor Setor { get; set; }
 
+        [Column("ID_VAGA_OCU")]
         public int vagId { get; set; }
-        public Vagas vaga { get; set; }
+        public Vagas Vaga { get; set; }
 
+        [Column("ID_VEICULO_OCU")]
         public int veiId { get; set; }
-        public  Veiculo veiculo { get; set; }
+        public  Veiculo Veiculo { get; set; }
 
 
      //   public virtual Estadia Estadia { get; set; }

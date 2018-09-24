@@ -19,9 +19,9 @@ namespace SGECOREDOMINIO
         [Column(TypeName ="nvarchar(3)")]
         public string Numero_Vaga { get; set; }
 
+        [Column("ID_SETOR")]
         public int setId { get; set; }
-
-        public  Setor setor { get; set; }
+        public  Setor Setor { get; set; }
 
         public ICollection<Ocupacao> Ocupacoes { get; set; }
 

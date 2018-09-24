@@ -14,7 +14,7 @@ namespace SGECOREDOMINIO
 
         [Key]
         public int Id_Veiculo { get; set; }
-        [Column(TypeName = "nvarchar(9)")]
+        [Column("PLC_VEICULO",TypeName = "nvarchar(9)")]
         public string Placa_Veic { get; set; }
 
         public ICollection<Ocupacao> Ocupacoes { get; set; }
